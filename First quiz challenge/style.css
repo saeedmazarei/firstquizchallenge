@@ -1,0 +1,210 @@
+body {
+    background-image: url(./images/pattern-min.png) ,linear-gradient(to right,#30204c, #0b0116);
+}
+
+/* header  */
+
+header {
+    margin: 5%;
+}
+
+.header-img {
+    width: 40%;
+    height: 150px;
+    background-size: cover;
+    background-position: right;
+}
+
+#title-pic {
+    background-image: url(./images/title-min.png);
+    float: right;
+}
+
+#help-button {
+    background-image: url(./images/help\ button-min.png);
+    background-position: left;
+    background-size: cover;
+    width: 18%;
+}
+
+/* info */
+
+#info {
+    width: 80%;
+    height: 550px;
+    background-image: url(./images/info-min.png);
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+    margin-top: 20%;
+}
+
+/* start button */
+
+#start-button {
+    width: 60%;
+    height: 200px;
+    margin: auto;
+    margin-top: 10%;
+    background-image: url(./images/start\ button-min.png);
+    background-position: center;
+    background-size: cover;
+}
+
+/* notice */
+
+#notice {
+    width: 95%;
+    height: 550px;
+    margin: auto;
+    margin-top: 5%;
+    background-image: url(./images/notice-min.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#my-game {
+    width: 50%;
+    height: 110px;
+    margin: auto;
+    background-image: url(./images/my\ games\ button-min.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: 75%;
+}
+
+/* progress bar */
+
+
+.rate-progress-container{
+    width: 100%;
+    height: 50px;
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: repeat(15, 6%);
+
+}
+
+.rate-pic {
+    background-image: url(./images/medal\ on-min.png);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+#first-rate-pic{
+    grid-column: 5 / 5;
+}
+
+#second-rate-pic{
+    grid-column: 8 / 8;
+}
+
+#third-rate-pic{
+    grid-column: 11 / 11;
+}
+
+#fourth-rate-pic{
+    grid-column: 14 / 14;
+}
+
+.gold-number{
+    color: white;
+    font-family: iranyekan;
+    font-size: 35px;
+    padding-left: 25%;
+}
+
+#first-gold-number{
+    grid-column: 4 / 4;
+}
+
+#second-gold-number{
+    grid-column: 7 / 7;
+}
+
+#third-gold-number{
+    grid-column: 10 / 10;
+}
+
+#fourth-gold-number{
+    grid-column: 13 / 13;
+}
+
+#progress-bar{
+    width:70%;
+    height: 80px;
+    margin-left: 10%;
+    margin-top: 0%;
+    border-radius: 20px;
+    background-color: #FFFEFB;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+
+.pr-bars {
+    background-color: rgb(33, 226, 33);
+    /* border-radius: 20px; */
+    /* display: none; */
+}
+
+#first-part{
+    border-right-color: white;
+}
+
+#second-part{
+    border-right-color: white;
+}
+
+#third-part{
+    border-right-color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#fourth-part{
+    border-right-color: white;
+}
+
+#score{
+    font-family: iranyekan;
+    font-weight: 750;
+    font-size: 35px;
+    position: absolute;
+    left: 40%;
+    padding-top: 8px;
+}
+
+#score-container {
+    width: 70%;
+    height: 300px;
+    margin-left: 10%;
+    margin-top: -30px;
+    display: flex;
+}
+
+.tik-class{
+    width: 20%;
+    height: auto;
+    background-image: url(./images/green\ 0-min.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+#first-tik{
+    margin-left: 17%;
+}
+
+#second-tik{
+    margin-left: 5%;
+}
+
+#third-tik{
+    width: 38%;
+    height: 280px;
+    background-image: url(./images/blue\ 3-min.png);
+    background-size: cover;
+    position: relative;
+    left: 19%;
+}
