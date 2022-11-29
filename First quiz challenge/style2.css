@@ -58,6 +58,7 @@ body {
 .result {
     text-align: center;
     padding-top: 9%;
+    direction: rtl;
 }
 
 .vs {
