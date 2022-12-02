@@ -32,7 +32,7 @@ const getData = async() => {
             const jsResponse = await response.json();
             if(jsResponse.data.registered){
                 let missions = jsResponse.data.missions;
-                let score = 25;
+                let score = 100;
                 missions[0].reward_status = "Unlocked";
                 missions[1].reward_status = "Unlocked";
                 missions[2].reward_status = "Unlocked";
@@ -59,7 +59,7 @@ const getData = async() => {
                     secondTik.style.backgroundImage = "url('./images/blue\ 2-min.png')";
                     thirdTik.style.backgroundImage = "url('./images/blue\ 3-min.png')";
                     firstTik.style.zIndex = "2";
-                    firstTik.addEventListener('click', claim(this.id));
+                    firstTik.addEventListener('click', claim);
                 }
                 
                 if(score===25 && missions[0].reward_status=="Claimed"){
@@ -77,11 +77,11 @@ const getData = async() => {
                     firstTik.classList.add("blue-logo");
                     secondTik.classList.add("blue-logo");
                     thirdTik.classList.add("blue-logo");
-                    firstTik.style.backgroundImage = "url('./images/gold\ 1-min.png')"
+                    firstTik.style.backgroundImage = "url('./images/gold\ 1-min.png')";
                     secondTik.style.backgroundImage = "url('./images/blue\ 2-min.png')";
                     thirdTik.style.backgroundImage = "url('./images/blue\ 3-min.png')";
                     firstTik.style.zIndex = "2";
-                    firstTik.addEventListener('click', claim(this.id));
+                    firstTik.addEventListener('click', claim);
                 }
 
                 if(score>25 && score<50 && missions[0].reward_status=="Claimed"){
@@ -101,7 +101,7 @@ const getData = async() => {
                     thirdTik.classList.add("blue-logo");
                     secondTik.style.backgroundImage = "url('./images/gold\ 2-min.png')";
                     thirdTik.style.backgroundImage = "url('./images/blue\ 3-min.png')";
-                    secondTik.addEventListener('click', claim(this.id));
+                    secondTik.addEventListener('click', claim);
                     secondTik.style.zIndex = "2";
                     firstTik.style.marginLeft = "19.5%";
                     secondTik.style.marginLeft = "-2.5%";
@@ -115,8 +115,8 @@ const getData = async() => {
                     firstTik.style.backgroundImage = "url('./images/gold\ 1-min.png')";
                     secondTik.style.backgroundImage = "url('./images/gold\ 2-min.png')";
                     thirdTik.style.backgroundImage = "url('./images/blue\ 3-min.png')";
-                    firstTik.addEventListener('click', claim(this.id));
-                    secondTik.addEventListener('click', claim(this.id));
+                    firstTik.addEventListener('click', claim);
+                    secondTik.addEventListener('click', claim);
                 }
 
                 if(score==50 && missions[0].reward_status=="Claimed" && missions[1].reward_status=="Claimed"){
@@ -136,8 +136,8 @@ const getData = async() => {
                     firstTik.style.backgroundImage = "url('./images/gold\ 1-min.png')";
                     secondTik.style.backgroundImage = "url('./images/gold\ 2-min.png')";
                     thirdTik.style.backgroundImage = "url('./images/blue\ 3-min.png')";
-                    firstTik.addEventListener('click', claim(this.id));
-                    secondTik.addEventListener('click', claim(this.id));
+                    firstTik.addEventListener('click', claim);
+                    secondTik.addEventListener('click', claim);
                 }
 
                 if(score>50 && score<100 && missions[0].reward_status=="Claimed" && missions[1].reward_status=="Unlocked") {
@@ -146,7 +146,7 @@ const getData = async() => {
                     firstTik.classList.add("green-logo");
                     secondTik.classList.add("blue-logo");
                     thirdTik.classList.add("blue-logo");
-                    secondTik.addEventListener('click', claim(this.id));
+                    secondTik.addEventListener('click', claim);
                     firstTik.style.marginLeft = "19.5%";
                     secondTik.style.marginLeft = "-2.5%";
                     thirdTik.style.marginLeft = "10%";
@@ -166,12 +166,12 @@ const getData = async() => {
                     firstTik.classList.add("blue-logo");
                     secondTik.classList.add("blue-logo");
                     thirdTik.classList.add("blue-logo");
-                    secondTik.style.backgroundImage = "url('./images/gold\ 1-min.png')";
+                    firstTik.style.backgroundImage = "url('./images/gold\ 1-min.png')";
                     secondTik.style.backgroundImage = "url('./images/gold\ 2-min.png')";
                     thirdTik.style.backgroundImage = "url('./images/gold\ 3-min.png')";
-                    firstTik.addEventListener('click', claim(this.id));
-                    secondTik.addEventListener('click', claim(this.id));
-                    thirdTik.addEventListener('click', claim(this.id));
+                    firstTik.addEventListener('click', claim);
+                    secondTik.addEventListener('click', claim);
+                    thirdTik.addEventListener('click', claim);
                 }
 
                 if(score >= 100 && missions[0].reward_status=="Claimed" && missions[1].reward_status=="Unlocked" && missions[2].reward_status=="Unlocked"){
@@ -194,7 +194,7 @@ const getData = async() => {
                     firstTik.style.marginLeft = "19.5%";
                     secondTik.style.marginLeft = "2.5%";
                     thirdTik.style.marginLeft = "15%";
-                    thirdTik.addEventListener('click', claim(this.id));
+                    thirdTik.addEventListener('click', claim);
                 }
 
                 if(score >= 100 && missions[0].reward_status=="Claimed" && missions[1].reward_status=="Claimed" && missions[2].reward_status=="Claimed"){
@@ -220,22 +220,41 @@ getData();
 // request to api for claim reward
 const claim = async (elementId) => {
     try {
-        if(elementId == 'm1') {
+        if(elementId.target.id == 'first-tik') {
             missionId = 'm1';
+            firstTik.style.backgroundImage = "url('./images/green\ 0-min.png')";
+            firstTik.classList.add("green-logo");
+            firstTik.style.marginLeft = "19.5%";
+            secondTik.style.marginLeft = "-2.5%";
+            thirdTik.style.marginLeft = "10%";
         }
-        else if(elementId == 'm2') {
+        else if(elementId.target.id == 'second-tik') {
             missionId = 'm2';
+            secondTik.classList.add("green-logo");
+            secondTik.style.backgroundImage = "url('./images/green\ 0-min.png')";
+            firstTik.style.marginLeft = "19.5%";
+            secondTik.style.marginLeft = "2.5%";
+            thirdTik.style.marginLeft = "15%";
         }
-        else missionId = 'm3';
+        else {
+            missionId = 'm3';
+            thirdTik.classList.add("green-logo");
+            thirdTik.style.backgroundImage = "url('./images/green\ 0-min.png')";
+            firstTik.style.marginLeft = "19.5%";
+            secondTik.style.marginLeft = "2.5%";
+            thirdTik.style.marginLeft = "20.5%";
+        }
+        let formdata = new FormData();
+        formdata.append("mission_id", "m1");
+        formdata.append("hash_id", "nj0pg9");
+        formdata.append("challenge", "MedalOfHonor");
 
-        console.log(missionId)
-        const response = await fetch('https://quizofkings.com/challenge-api/v1/challenge/claim', {
+        let requestOptions = {
         method: 'POST',
-        body: {
-            mission_id: `${missionId}`,
-            challenge: 'MedalOfHonor',
-            hash_id: `${url}`
-        }})
+        body: formdata,
+        redirect: 'follow'
+        };
+        const response = await fetch('https://quizofkings.com/challenge-api/v1/challenge/claim', requestOptions);
         if(response.ok) {
             const jsResponse = await response.json();
         }
