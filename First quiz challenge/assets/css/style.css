@@ -150,6 +150,48 @@ header {
     display: flex;
 }
 
+#get-coin {
+    width: 100%;
+    position: absolute;
+    animation-name: coinget;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.coins {
+    width: 30%;
+    display: none;
+    position: absolute;
+}
+
+.getcoin1 {
+    left: 18.5%;;
+}
+
+.getcoin2 {
+    left: 35.25%;
+}
+
+.getcoin3 {
+    left: 70%;
+}
+
+/* #get-coin {
+    animation-name: coinget;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+} */
+
+@keyframes coinget {
+    0% {top: 43%;}
+    100% {top: 45%;}
+}
 
 #pr-bars {
     background-color: rgb(33, 226, 33);
@@ -221,21 +263,19 @@ header {
     width: 100px;
     height: 100px;
     display: inline-block;
-    margin-top: -2%;
+    margin-top: -2.5%;
+    position: relative;
 }
 
 .box-1 {
-    position: relative;
     left: 17.75%;
 }
 
 .box-2 {
-    position: relative;
     left: 24.5%;
 }
 
 .box-3 {
-    position: relative;
     left: 49%;
 }
 
@@ -295,6 +335,7 @@ header {
     font-family: iranyekan;
     src: url(../font/iranyekanwebbold.woff);
 }
+
 
 .match-item span{
     font-size: 25px;
