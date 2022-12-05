@@ -2,6 +2,8 @@
 const changeProgress = document.getElementById("pr-bars");
 const loading = document.getElementById("loading");
 const page = document.getElementById('holepage');
+const getCoin = document.querySelectorAll('.coins');
+console.log(getCoin);
 
 // loading
 const startButton = document.getElementById('start-button');

@@ -10,12 +10,13 @@ const getData = async() => {
                 loading.classList.remove('display');
                 page.classList.add('display');
                 let missions = jsResponse.data.missions;
-                let score = missions.score;
+                let score = missions[0].score;
                 score = (score * 100) / 60;
                 changeProgress.style.width = score + "%";
                 missions.forEach((mission, index) => {
                     if(mission.reward_status == 'Unlocked') {
                         document.querySelectorAll(`.box-${index+1} img`)[1].style.display = "block";
+                        getCoin[index].style.display = 'inline-block';
                         document.querySelectorAll(`.box-${index+1} img`)[1].addEventListener('click', ()=> {
                             claim(index);
                         });
@@ -39,6 +40,7 @@ const getData = async() => {
 // claimig
 const claim = async (elementId) => {
     try {
+        getCoin[elementId].style.display = 'none';
         document.querySelectorAll(`.box-${elementId+1} img`)[1].style.display = "none";
         document.querySelectorAll(`.box-${elementId+1} img`)[2].style.display = "block";
         let formdata = new FormData();
